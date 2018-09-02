@@ -23,6 +23,7 @@ class App < Sinatra::Base
     x=@num
     x.times do
       "hi"
+      binding.pry
     end
     "#{@phrase}"
   end
