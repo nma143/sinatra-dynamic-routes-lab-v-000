@@ -31,7 +31,22 @@ class App < Sinatra::Base
   get '/say/:word1/:word2/:word3/:word4/:word5' do
   @message = params[:word1] + " " + params[:word2]+ " " + params[:word3]+ " " + params[:word4]+ " " + params[:word5] +"."
   "#{@message}"
-
   end
 
+  # Accepts an operation (add, subtract, multiply or divide) and performs the operation on the two numbers provided.
+  get '/:operation/:number1/:number2' do
+    num1 = params[:number1].to_i
+    num2 = params[:number2].to_i
+    if params[:operation]=="add"
+      "#{num1 + num2}"
+    elsif params[:operation]=="subtract"
+      "#{num1 - num2}"
+    elsif params[:operation]=="multiply"
+      "#{num1 * num2}"
+    elsif params[:operation]=="divide"
+      "#{num1 / num2}"
+    else
+      "Operation does not exist"
+    end
+  end
 end
