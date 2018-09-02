@@ -22,10 +22,10 @@ class App < Sinatra::Base
     @phrase = params[:phrase]
     @message = ""
     @num.times do
-      @message << @phrase
+      @message << @phrase + " "
     end
     "#{@message}"
-    
+
   end
 
 end
