@@ -30,7 +30,7 @@ class App < Sinatra::Base
   # Accepts five words and returns a string containing all five words
   get '/say/:word1/:word2/:word3/:word4/:word5' do
   @message = params[:word1] + " " + params[:word2]
-  "#{message}"
+  "#{@message}"
 
   end
 
