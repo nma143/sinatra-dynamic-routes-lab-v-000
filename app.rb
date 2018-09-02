@@ -25,6 +25,12 @@ class App < Sinatra::Base
       @message << @phrase + " "
     end
     "#{@message}"
+  end
+
+  # Accepts five words and returns a string containing all five words
+  get '/say/:word1/:word2/:word3/:word4/:word5' do
+  @message = params[:word1] + " " + params[:word2]
+  "#{message}"
 
   end
 
